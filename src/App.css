@@ -1,38 +1,90 @@
-.App {
+:root {
+  --primary-color: #1DA57A;
+  --header-background: #1DA57A;
+  --link-color: #1890ff;
+  --font-size-base: 16px;
+  --background-color: #f4f6f9;
+  --text-color: #000000;
+  --card-background: #ffffff;
+  --footer-background: #f4f6f9;
+}
+
+[data-theme='dark'] {
+  --primary-color: #0b3d0b; /* Dark green for header */
+  --header-background: #0b3d0b; /* Dark green for header */
+  --link-color: #1DA57A;
+  --background-color: #000000 !important; /* Black background */
+  --text-color: #ffffff;
+  --card-background: #1a1a1a; /* Darker card background */
+  --footer-background: #1a1a1a; /* Darker footer background */
+}
+
+body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+.ant-layout{
+  background-color: transparent;
+}
+
+.ant-layout-header {
+  background-color: var(--header-background);
+  color: var(--text-color);
   text-align: center;
+  font-size: 24px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ant-layout-content {
+  padding: 50px;
+  background-color: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.ant-card {
+  text-align: center;
+  font-size: 18px;
+  background-color: var(--card-background);
+  color: var(--text-color);
+}
+
+.ant-card-head-title {
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: var(--footer-background);
+  color: var(--text-color);
+}
+
+.ant-switch-checked {
+  background-color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ant-layout-content {
+    padding: 20px;
+  }
+
+  .ant-card {
+    font-size: 16px;
+  }
+
+  .ant-card-head-title {
+    font-size: 18px;
+  }
+
+  .footer {
+    padding: 10px 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#map {
+  height: 500px; /* Ensure the height is set */
+  width: 100%;
 }
